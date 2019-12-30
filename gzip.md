@@ -38,6 +38,6 @@
         }
       }
     }
-### 配置完成后，对项目进行 npm run build 打包之后，你可以在dist文件夹下看到相应的.gzip的文件，这就是进行压缩后生成的，这时我们在开发者工具中的network中查看我们的js或者其他文件的请求，可在response header中发现content-encoding:gzip，这表示支持gzip的请求。
+### 配置完成后，对项目进行 npm run build 打包之后，你可以在dist文件夹下看到相应的.gz的文件，这就是进行压缩后生成的，这时我们在开发者工具中的network中查看我们的js或者其他文件的请求，可在response header中发现content-encoding:gzip，这表示支持gzip的请求。
 
 > 看一下，网页请求的速度是不是飞快呢~
