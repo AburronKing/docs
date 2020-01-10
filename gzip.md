@@ -6,7 +6,8 @@ gzip压缩可以提高2-3倍的速度，非常棒。
 
 ### 1. 首先你要准备配置一下nginx
 
-```// nginx开启gzip服务
+```
+// nginx开启gzip服务
 gzip on;
 gzip_disable "msie6";
 
@@ -20,6 +21,7 @@ gzip_http_version 1.1;
 gzip_types text/plain text/css application/json application/x-javascript text/xml 
 application/xml application/xml+rss text/javascript image/jpeg image/gif image/png image/jpg;
 ```
+
 配置完成后，需要nginx -s reload 重启一下nginx即可。
 
 
