@@ -40,7 +40,7 @@ JavaScript将首先处理 var a=3;,会在栈中创建一个变量为a引用，�
 
 下面介绍几种简易的方式：
 
-1. 最low版：JSON.stringify()以及JSON.parse()
+#### 1.最low版：JSON.stringify()以及JSON.parse()
 
 ```
 var obj1 = {
@@ -56,7 +56,7 @@ console.log(obj2.a); // 3
 
 此方法不可以拷贝 undefined ， function， RegExp 等等类型的。
 
-2. Object.assign(target, obj)
+#### 2.Object.assign(target, obj)
 
 ```
  var obj1 = {
@@ -70,7 +70,7 @@ console.log(obj2.b); // 3
 ```
 此方法不可以用于多层嵌套的对象。
 
-3. 使用扩展运算符 {...}
+#### 3.使用扩展运算符 {...}
 
 ```
 var obj1 = {
@@ -83,7 +83,7 @@ console.log(obj1.b); // 2
 console.log(obj2.b); // 3
 ```
 
-4. 递归函数
+#### 4.递归函数
 
 ```
 function deepClone(obj) {
