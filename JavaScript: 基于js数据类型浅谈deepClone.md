@@ -87,21 +87,28 @@ console.log(obj2.b); // 3
 我们可以递归去复制所有层级属性，以实现深拷贝：
 
 ```
-function deepClone(obj) {
+function deepClone(obj, clone) {
   //判断拷贝的要进行深拷贝的是数组还是对象，是数组的话进行数组拷贝，对象的话进行对象拷贝
-  var objClone = Array.isArray(obj) ? [] : {};
-  //进行深拷贝的不能为空，并且是对象
-  if (obj && typeof obj === "object") {
-    for (key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        if (obj[key] && typeof obj[key] === "object") {
-          objClone[key] = deepClone(obj[key]);
-        } else {
-          objClone[key] = obj[key];
-        }
+  const toString = Object.prototype.toString
+  toString.call(obj) === '[object Array]' ? clone = clone || [] : clone = clone || {}
+  for (const i in obj) {
+    if (typeof obj[i] === 'object' && obj[i]!==null) {
+      // 要考虑深复制问题了
+      if (Array.isArray(obj[i])) {
+        // 这是数组
+        clone[i] = []
+      } else {
+        // 这是对象
+        clone[i] = {}
       }
+      deepClone(obj[i], clone[i])
+    } else {
+      clone[i] = obj[i]
     }
   }
-  return objClone;
+  return clone
 }
+
+// 使用方法：
+let a = deepClone(b)
 ```
