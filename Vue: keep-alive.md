@@ -87,11 +87,13 @@ beforeRouteLeave(to, from, next) {
  },
 ```
 继续重复一下上面的操作，发现第一次的页面会被缓存，
+
 ![](https://user-gold-cdn.xitu.io/2020/4/30/171c9aa421b0c95e?w=462&h=128&f=png&s=16317)
 
 第二次从a前往b，在前往c之后，b一直会被销毁，无法缓存，有时还会出现没有销毁的情况，导致第一次的缓存一直存在，之后每次还是会销毁b，
 
 ![](https://user-gold-cdn.xitu.io/2020/4/30/171c9ae0dfdb4f1d?w=434&h=127&f=png&s=15903)
+
 ![](https://user-gold-cdn.xitu.io/2020/4/30/171c9ae576a52ed8?w=463&h=103&f=png&s=12034)
 
 全都不是我们的菜~！！
